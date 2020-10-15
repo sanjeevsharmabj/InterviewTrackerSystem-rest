@@ -1,4 +1,4 @@
-package com.wellsfargofsd.its.exception;
+package com.wellsfargo.fsd.its.exception;
 
 public class InterviewTrackerException extends Exception {
 

@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service;
 
 import com.wellsfargo.fsd.its.dao.Interviewdao;
 import com.wellsfargo.fsd.its.dao.Userdao;
+import com.wellsfargo.fsd.its.entity.InterviewEntity;
+import com.wellsfargo.fsd.its.entity.UserEntity;
+import com.wellsfargo.fsd.its.exception.InterviewTrackerException;
 import com.wellsfargo.fsd.its.model.AttendeeModel;
 import com.wellsfargo.fsd.its.model.InterviewModel;
 import com.wellsfargo.fsd.its.model.UserModel;
-import com.wellsfargofsd.its.entity.InterviewEntity;
-import com.wellsfargofsd.its.entity.UserEntity;
-import com.wellsfargofsd.its.exception.InterviewTrackerException;
 
 @Service
 public class InterviewServiceImpl implements InterviewService {

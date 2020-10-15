@@ -10,9 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.wellsfargo.fsd.its.dao.Userdao;
+import com.wellsfargo.fsd.its.entity.UserEntity;
+import com.wellsfargo.fsd.its.exception.InterviewTrackerException;
 import com.wellsfargo.fsd.its.model.UserModel;
-import com.wellsfargofsd.its.entity.UserEntity;
-import com.wellsfargofsd.its.exception.InterviewTrackerException;
 
 @Service
 public class UserServiceImpl implements UserService {

@@ -1,4 +1,4 @@
-package com.wellsfargofsd.its.entity;
+package com.wellsfargo.fsd.its.entity;
 
 import java.io.Serializable;
 import java.util.HashSet;

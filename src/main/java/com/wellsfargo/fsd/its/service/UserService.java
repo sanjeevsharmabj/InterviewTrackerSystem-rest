@@ -2,8 +2,8 @@ package com.wellsfargo.fsd.its.service;
 
 import java.util.List;
 
+import com.wellsfargo.fsd.its.exception.InterviewTrackerException;
 import com.wellsfargo.fsd.its.model.UserModel;
-import com.wellsfargofsd.its.exception.InterviewTrackerException;
 
 public interface UserService {
 	
