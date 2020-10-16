@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.wellsfargo.fsd.its.dao.Interviewdao;
 import com.wellsfargo.fsd.its.dao.Userdao;
 import com.wellsfargo.fsd.its.entity.UserEntity;
 import com.wellsfargo.fsd.its.exception.InterviewTrackerException;
@@ -20,6 +21,8 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private Userdao userrepo;
 	
+	@Autowired
+	private Interviewdao intvwrepo;
 	
 	private UserEntity toEntity(UserModel model) {
 		return new UserEntity(model.getUserId(),model.getFirstName(),model.getLastName(),
@@ -44,7 +47,7 @@ public class UserServiceImpl implements UserService {
 		return user;
 	}
 
-	@Override
+	/*@Override
 	@Transactional
 	public UserModel save(UserModel user) throws InterviewTrackerException {
 			if(user!=null) {
@@ -55,14 +58,18 @@ public class UserServiceImpl implements UserService {
 				user = toModel(userrepo.save(toEntity(user)));
 			}
 		return user;
-	}
+	}*/
 
 	@Override
+	@Transactional
 	public boolean deleteuser(int userId) throws InterviewTrackerException {
 			if(!userrepo.existsById(userId)) {
 				throw new InterviewTrackerException("UserId not found");
 			}
-			userrepo.deleteById(userId);
+			UserEntity userEntity = userrepo.findById(userId).orElse(null);
+			userEntity.removeInterviews();
+			userrepo.flush();
+			userrepo.delete(userEntity);
 		return true;
 	}
 

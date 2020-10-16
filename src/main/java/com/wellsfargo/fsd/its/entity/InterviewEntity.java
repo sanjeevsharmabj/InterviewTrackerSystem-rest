@@ -38,7 +38,7 @@ public class InterviewEntity implements Serializable,Comparable<InterviewEntity>
 	private String userSkills;
 	
 	@Column(name="datentimeofI")
-	@DateTimeFormat(iso=ISO.DATE_TIME)
+	@DateTimeFormat(iso=ISO.DATE)
 	private LocalDate dateofInterview;
 	
 	@Column(name="iStatus")
@@ -56,7 +56,7 @@ public class InterviewEntity implements Serializable,Comparable<InterviewEntity>
 
 	public InterviewEntity() {
 		super();
-		// TODO Auto-generated constructor stub
+		// left unimplemented
 	}
 
 	public InterviewEntity(Integer interviewId, String interviewName, String interviewerName, String userSkills,
@@ -152,7 +152,7 @@ public class InterviewEntity implements Serializable,Comparable<InterviewEntity>
 
 	@Override
 	public String toString() {
-		return "InterviewEntity [interviewId=" + interviewId + ", interviewName=" + interviewName + ", interviewerName="
+		return "Interview Details [interviewId=" + interviewId + ", interviewName=" + interviewName + ", interviewerName="
 				+ interviewerName + ", userSkills=" + userSkills + ", dateofInterview=" + dateofInterview
 				+ ", intrvStatus=" + intrvStatus + ", remarks=" + remarks + "]";
 	}

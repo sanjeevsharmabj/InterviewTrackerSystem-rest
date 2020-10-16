@@ -20,7 +20,7 @@ public class InterviewModel {
 	@Size(min=5,max=30,message = "Interviewer Name is expected to be 5 to 30 chars in length")
 	private String interviewerName;
 	@NotNull(message="Users Skill is mandatory")
-	@Size(min=5,max=30,message = "Users Skill is expected to be 3 to 30 chars in length")
+	@Size(min=5,max=30,message = "Users Skill is expected to be 5 to 30 chars in length")
 	private String userSkills;
 	private LocalDate dateofInterview;
 	@NotNull(message="Interview Status is mandatory")
@@ -43,7 +43,7 @@ public class InterviewModel {
 	
 	public InterviewModel() {
 		super();
-		// TODO Auto-generated constructor stub
+		// left unimplemented
 	}
 
 	public InterviewModel(Integer interviewId, String interviewName, String interviewerName, String userSkills,
@@ -81,7 +81,7 @@ public class InterviewModel {
 	}
 
 	public String getInterviewName() {
-		return interviewName;
+		return interviewName;	
 	}
 
 	public void setInterviewName(String interviewName) {
@@ -127,6 +127,13 @@ public class InterviewModel {
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
-	
 
+	@Override
+	public String toString() {
+		return "Interview Details [interviewId=" + interviewId + ", interviewName=" + interviewName + ", interviewerName="
+				+ interviewerName + ", userSkills=" + userSkills + ", dateofInterview=" + dateofInterview
+				+ ", intrvStatus=" + intrvStatus + ", remarks=" + remarks + "]";
+	}
+	
+	
 }

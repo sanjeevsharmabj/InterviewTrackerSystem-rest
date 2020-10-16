@@ -12,7 +12,7 @@ import com.wellsfargo.fsd.its.entity.InterviewEntity;
 @Repository
 public interface Interviewdao extends JpaRepository<InterviewEntity,Integer>{
 	@Query("SELECT i FROM InterviewEntity i WHERE i.interviewId =:interviewId")
-	List<InterviewEntity> findAllById(Integer iId);
+	List<InterviewEntity> findAllById(Integer interviewId);
 	
 	@Query("SELECT i FROM InterviewEntity i WHERE i.interviewName =:interviewName or i.interviewerName=:interviewerName")
 	List<InterviewEntity> findByNameAndInterviewer(String interviewName, String interviewerName);

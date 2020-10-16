@@ -100,7 +100,7 @@ public class InterviewServiceImpl implements InterviewService {
 			InterviewModel interview = getInterviewById(attendee.getInterviewId());
 			for(UserModel user: interview.getAttendee()) {
 				if(user.getUserId() == attendee.getUserId()) {
-					throw new InterviewTrackerException("User has already added the interview");
+					throw new InterviewTrackerException("User has already attended the interview");
 				}
 			}
 			
@@ -120,7 +120,7 @@ public class InterviewServiceImpl implements InterviewService {
 
 	@Override
 	public boolean deleteInterview(int interviewId) throws InterviewTrackerException {
-		if(intvwrepo.existsById(interviewId)) {
+		if(!intvwrepo.existsById(interviewId)) {
 			throw new InterviewTrackerException("InterviewId does not exist");
 		}
 		
@@ -130,7 +130,7 @@ public class InterviewServiceImpl implements InterviewService {
 
 	@Override
 	public InterviewModel updateStatus(Integer interviewId, String Status) throws InterviewTrackerException {
-		if(intvwrepo.existsById(interviewId)) {
+		if(!intvwrepo.existsById(interviewId)) {
 			throw new InterviewTrackerException("InterviewId does not exist");
 		}
 		InterviewModel interview = getInterviewById(interviewId);

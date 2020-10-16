@@ -28,14 +28,14 @@ public class UserModel {
 	
 	@NotNull(message = "Mobile Number is mandatory")
 	@Size(min=10, max=10,message = "Mobile number should be valid and 10 characters in length")
-	private Integer mobile;
+	private String mobile;
 
 	public UserModel() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public UserModel(Integer userId, String firstName, String lastName, String email, Integer mobile) {
+	public UserModel(Integer userId, String firstName, String lastName, String email, String mobile) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
@@ -77,11 +77,11 @@ public class UserModel {
 		this.email = email;
 	}
 
-	public Integer getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
 
-	public void setMobile(Integer mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 	

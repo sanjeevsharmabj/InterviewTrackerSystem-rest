@@ -27,18 +27,18 @@ public class UserEntity implements Serializable,Comparable<UserEntity> {
 	@Column(name="email")
 	private String email;
 	@Column(name="mobileNo")
-	private Integer mobile;
+	private String mobile;
 	
 	@ManyToMany(mappedBy = "attendees", fetch=FetchType.LAZY, cascade = {CascadeType.MERGE, CascadeType.PERSIST})
 	private Set<InterviewEntity> interviews = new HashSet<>();
 	
 	public UserEntity() {
 		super();
-		// TODO Auto-generated constructor stub
+		// left unimplemented
 	}
 	
 	
-	public UserEntity(Integer userId, String firstName, String lastName, String email, Integer mobile) {
+	public UserEntity(Integer userId, String firstName, String lastName, String email, String mobile) {
 		super();
 		this.userId = userId;
 		this.firstName = firstName;
@@ -47,7 +47,7 @@ public class UserEntity implements Serializable,Comparable<UserEntity> {
 		this.mobile = mobile;
 	}
 	
-	public UserEntity(Integer userId, String firstName, String lastName, String email, Integer mobile,
+	public UserEntity(Integer userId, String firstName, String lastName, String email, String mobile,
 			Set<InterviewEntity> interviews) {
 		super();
 		this.userId = userId;
@@ -82,10 +82,10 @@ public class UserEntity implements Serializable,Comparable<UserEntity> {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getMobile() {
+	public String getMobile() {
 		return mobile;
 	}
-	public void setMobile(Integer mobile) {
+	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
 	

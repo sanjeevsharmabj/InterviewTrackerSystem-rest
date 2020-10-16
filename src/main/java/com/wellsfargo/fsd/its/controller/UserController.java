@@ -58,19 +58,19 @@ public class UserController {
 	
 	}
 	
-	@PutMapping
+	/*@PutMapping
 	public ResponseEntity<UserModel> modifyUser(@RequestBody @Valid UserModel user,BindingResult result) throws InterviewTrackerException{
 		
 		if(result.hasErrors()) {
 			throw new InterviewTrackerException(GlobalExceptionController.errMsgFrom(result));
 		}
 		return new ResponseEntity<>(userservice.save(user),HttpStatus.OK);
-	}
+	}*/
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> deleteUser(@PathVariable("id")int userId) throws InterviewTrackerException{
+	public ResponseEntity<String> deleteUser(@PathVariable("id")int userId) throws InterviewTrackerException{
 		userservice.deleteuser(userId);
-		return new ResponseEntity<>(HttpStatus.OK);
+		return new ResponseEntity<>("User Deleted Successfully",HttpStatus.OK);
 		
 	}
 	
